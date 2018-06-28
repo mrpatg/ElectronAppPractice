@@ -1,5 +1,5 @@
 {
-  "name": "electron",
+  "name": "electrontest",
   "version": "1.0.0",
   "description": "first go at electron",
   "main": "main.js",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mrpatg/ElectronAppPractice/issues"
   },
-  "homepage": "https://github.com/mrpatg/ElectronAppPractice#readme"
+  "homepage": "https://github.com/mrpatg/ElectronAppPractice#readme",
+  "dependencies": {
+    "electron": "^2.0.3"
+  }
 }
