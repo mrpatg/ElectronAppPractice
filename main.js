@@ -18,7 +18,7 @@ app.on('ready', function(){
         slashes: true
     }));
     // Build menu from template
-    const mainmenu = Menu.buildFromTemplate(mainmenuTemplate);
+    const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
     // Insert menu
     Menu.setApplicationMenu(mainMenu);
 });
