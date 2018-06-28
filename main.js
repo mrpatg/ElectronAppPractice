@@ -2,7 +2,7 @@ const electron = require('electron');
 const url = require('url');
 const path = require('path');
 
-const {app, BrowserWindow} = electron;
+const {app, BrowserWindow, Menu} = electron;
 
 let mainWindow;
 
@@ -16,5 +16,16 @@ app.on('ready', function(){
         pathname: path.join(__dirname, 'mainWindow.html'),
         protocol: 'file:',
         slashes: true
-    }))
+    }));
+    // Build menu from template
+    const mainmenu = Menu.buildFromTemplate(mainmenuTemplate);
+    // Insert menu
+    Menu.setApplicationMenu(mainMenu);
 });
+
+// make menu template
+const mainMenuTemplate = [
+    {
+        label:'File'
+    }
+]
