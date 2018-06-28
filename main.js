@@ -18,6 +18,10 @@ app.on('ready', function(){
         protocol: 'file:',
         slashes: true
     }));
+    //Quit when closed
+    mainWindow.on('closed', function(){
+        app.quit();
+    });
     // Build menu from template
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
     // Insert menu
@@ -38,6 +42,10 @@ app.on('ready', function(){
         protocol: 'file:',
         slashes: true
     }));
+    // Reset addwindow URL (garbage collection)
+    addWindow.on('close', function(){
+        addWindow = null;
+    })
 }
 
 // make menu template
