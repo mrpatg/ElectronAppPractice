@@ -9,3 +9,7 @@
 // IPC renderer???
 
 // IPC works a lot like socket.io
+
+// gotta remember to use curly's on ipcRenderer, and dont call it ipcRaindeer
+
+// vanilla js dom manipulation is awesome, doesnt suck
