@@ -1,0 +1,19 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "first go at electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrpatg/ElectronAppPractice.git"
+  },
+  "author": "Patrick Godbey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrpatg/ElectronAppPractice/issues"
+  },
+  "homepage": "https://github.com/mrpatg/ElectronAppPractice#readme"
+}
