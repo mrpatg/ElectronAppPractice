@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
     <title>Shopping List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
 </head>
 <body>
-    <h1>Shopping List</h1>
-    <ul>
-
-    </ul>
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo center">Shopping List</a>
+        </div>
+    </nav>
+    <ul></ul>
 </body>
 <script>
     const electron = require('electron');
@@ -16,7 +20,9 @@
 
     //Add item
     ipcRenderer.on('item:add', function(e, item){
+        ul.className = 'collection';
         const li = document.createElement('li');
+        li.className = 'collection-item';
         // add xnode
         const itemText = document.createTextNode(item);
         // Append item text to the li
@@ -26,12 +32,17 @@
     //Clear items
     ipcRenderer.on('item:clear', function(){
         ul.innerHTML = '';
+        ul.className = '';
     })
 
     // Clear individual item
     ul.addEventListener('dblclick', removeItem);
     function removeItem(e){
         e.target.remove();
+        // if no more items, get rid of style
+        if(ul.children.length == 0){
+            ul.className = '';
+        }
     }
 </script>
 </html>
