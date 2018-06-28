@@ -71,4 +71,31 @@ const mainMenuTemplate = [
             }
         ]
     }
-]
+];
+
+// If max, add empty object to menu to beginning
+if(process.platform == 'darwin'){
+    
+    mainMenuTemplate.unshift({});
+}
+
+// Add developer tools item if not in production
+if(process.env.NODE_ENV !== 'production'){
+    mainMenuTemplate.push({
+        label: 'Developer Tools',
+        submenu: [
+            {
+                label: 'Toggle Tools',
+                click(item, focusedWindow){
+                    focusedWindow.toggleDevTools();
+                },
+                accelerator: process.platform == 'darwin' ? 'Command+I' : 'Ctrl+I',
+
+            },
+            {
+                role: 'reload'
+            }
+        ]
+    });
+
+}
